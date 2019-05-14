@@ -1,0 +1,8 @@
+#Dump database schema only 
+->mysqldump -d -u someuser -p mydatabase
+or
+->mysqldump --no-data -u someuser -p mydatabase
+
+#Dump database with data 
+-> mysqldump -u someuser -p --compatible=postgresql --default-character-set=utf8 -r new_prism_db.mysql  mydatabase
+
