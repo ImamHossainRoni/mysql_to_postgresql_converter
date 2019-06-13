@@ -1,4 +1,4 @@
-file = open("myfile.psql","r")
+file = open("prismerp_2.sql","r")
 file_to_str = file.read()
 splitlines_list = file_to_str.splitlines()
 
@@ -14,11 +14,14 @@ for line_no, line in enumerate(splitlines_list, start=1):
         query_started = 'CREATE INDEX '
         table_name = line[17 :left_br_index]
         index_name = table_name + '_index' 
-        final_query = query_started + '"'+index_name + '"' +' '+ 'ON'+' ' +'"'+ table_name +'"' +' '+get_id
+        final_query = query_started + '"'+index_name + '"' +' '+ 'ON'+' ' +'"'+ table_name +'"' +' '+get_id +';'
         new_line_list.append(final_query)
+    else:
+        new_line_list.append(line)
+
         
 # print(get_id)
 # print(final_query)
-with open('roni_db.psql', 'w') as new_fp:
+with open('prismerp_2_2.sql', 'w') as new_fp:
     sss = '\n'.join(new_line_list)
     new_fp.write(sss)

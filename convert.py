@@ -1,4 +1,4 @@
-file = open("new_prism_db2 _c.psql","r")
+file = open("new_prismDb.psql","r")
 file_to_str = file.read()
 splitlines_list = file_to_str.splitlines()
 
